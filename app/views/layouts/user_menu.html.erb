@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mod2project</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <h2>
+        <%= link_to "My Account", user_path(id: 1)%>
+        <%= link_to "Channels", channels_path %>
+        <%= link_to "Leaderboards", leaderboards_path%>
+        <%= "You are logged in as #{User.find(session[:id]).username}" if session[:id]%>
+        <%= link_to "Log Out", logout_path, method: :post%>
+      </h2>
+    </header>
+    <%= yield %>
+  </body>
+</html>

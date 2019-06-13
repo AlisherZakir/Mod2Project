@@ -5,6 +5,7 @@ class ChannelsController < ApplicationController
   # GET /channels.json
   def index
     @channels = Channel.all
+    render layout: "user_menu"
   end
 
   # GET /channels/1
