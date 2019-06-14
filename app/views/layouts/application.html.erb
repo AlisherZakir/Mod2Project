@@ -10,6 +10,18 @@
   </head>
 
   <body>
+    <header>
+      <h2>
+        <%= link_to "My Account", user_path(id: 1)%>
+        <%= link_to "Channels", channels_path %>
+        <%= link_to "Leaderboards", leaderboards_path%>
+        <%= link_to "Rooms", rooms_path%>
+        <%= "You are logged in as #{User.find(session[:id]).username}" if session[:id]%>
+        <%= link_to "Log Out", logout_path, method: :post%>
+        You are currently in 
+        <%=  link_to Room.find(session[:room_id]).name, room_path(session[:room_id]) if session[:room_id]%>
+      </h2>
+    </header>
     <%= yield %>
   </body>
 </html>

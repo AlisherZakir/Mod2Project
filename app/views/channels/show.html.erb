@@ -10,5 +10,13 @@
   <%= @channel.description %>
 </p>
 
+<h2>Room</h2>
+
+<ul>
+  <% @rooms.each do |room|%>
+  <li><%= room.name%> : <%= link_to "Enter", room %></li>
+  <% end%>
+</ul>
+
 <%= link_to 'Edit', edit_channel_path(@channel) %> |
 <%= link_to 'Back', channels_path %>

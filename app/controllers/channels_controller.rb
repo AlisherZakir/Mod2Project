@@ -5,12 +5,13 @@ class ChannelsController < ApplicationController
   # GET /channels.json
   def index
     @channels = Channel.all
-    render layout: "user_menu"
   end
 
   # GET /channels/1
   # GET /channels/1.json
   def show
+    channel = Channel.find(params[:id])
+    @rooms = channel.rooms
   end
 
   # GET /channels/new

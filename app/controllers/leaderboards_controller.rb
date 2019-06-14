@@ -5,7 +5,6 @@ class LeaderboardsController < ApplicationController
   # GET /leaderboards.json
   def index
     @leaderboards = Leaderboard.all
-    render layout: "user_menu"
   end
 
   # GET /leaderboards/1
